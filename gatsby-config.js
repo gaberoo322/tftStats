@@ -1,8 +1,9 @@
 module.exports = {
+  pathPrefix: '/Gatsby-Starter-TypeScript-Redux-TDD-BDD',
   siteMetadata: {
-    title: `Team Fight Tactics Statistics`,
-    description: `TFT STATS DUDE`,
-    author: `@GabeAndGraham`,
+    title: `Gatsby-Starter-TypeScript-Redux-TDD-BDD`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    author: `@JimLynchCodes`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,6 +26,20 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-react-redux`,
+      options: {
+        pathToCreateStoreModule: './src/state/createStore',
+        serialize: {
+          space: 0,
+          isJSON: true,
+          unsafe: false,
+        },
+        cleanupOnClient: true,
+        windowKey: '__PRELOADED_STATE__',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
